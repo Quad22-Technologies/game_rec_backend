@@ -18,6 +18,19 @@ public class Vehicles {
     private String make;
     private String model;
     private Integer year;
+
+    public Vehicles(UUID vehicleid, String make, String model, Integer year, UUID vehicletypeid, UUID dealerid) {
+        this.vehicleid = vehicleid;
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.vehicletypeid = vehicletypeid;
+        this.dealerid = dealerid;
+    }
+
+    public Vehicles() {
+    }
+
     private UUID vehicletypeid;
     private UUID dealerid;
 
