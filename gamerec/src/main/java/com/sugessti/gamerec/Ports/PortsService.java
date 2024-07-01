@@ -20,6 +20,7 @@ public class PortsService {
 
     // Create a new vehicle
     public Ports createPort(Ports port) {
+       
         return PortsRepository.save(port);
     }
 
@@ -36,7 +37,8 @@ public class PortsService {
     // Update an existing vehicle
     
     public Ports updatePort(Ports port) {
-        PortsRepository.update(port);
+
+        PortsRepository.save(port);
         return port;
     }
     
@@ -44,6 +46,11 @@ public class PortsService {
     // Delete a vehicle by ID
     public void deletePort(UUID id) {
         PortsRepository.deleteById(id);
+    }
+
+    public Ports save(Ports ports) {
+        
+        return PortsRepository.save(ports); 
     }
 
 

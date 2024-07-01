@@ -1,6 +1,8 @@
 package com.sugessti.gamerec.Ports;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -9,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+
+import javax.sound.sampled.Port;
 
 @RestController
 @RequestMapping("api/Ports")
@@ -21,11 +25,6 @@ public class PortsController {
 
     @Autowired
     private PortsService PortsService;
-    
-
-
-
-
 
     
     @CrossOrigin(origins = "*") //@CrossOrigin annotation enables cross-origin resource sharing only for this specific method
@@ -52,6 +51,10 @@ public class PortsController {
 
     }
 
-
+@RequestMapping(value = "/add", method= RequestMethod.POST)
+    public Ports createPorts(@RequestBody Ports Ports) {
+        
+        return PortsService.save(Ports);
+    }
 
 }

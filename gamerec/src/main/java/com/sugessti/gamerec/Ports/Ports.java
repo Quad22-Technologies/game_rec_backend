@@ -23,8 +23,18 @@ public class Ports {
     private UUID PortsID;
     private String Platforms;
     private String Compatibility;
-    private LocalDate CreatedDate;
-    private LocalDate ModifiedDate;
+    
+
+
+    public Ports(UUID PortsID, String Platforms, String Compatibility) {
+        this.PortsID = PortsID;
+        this.Platforms = Platforms;
+        this.Compatibility = Compatibility;
+        
+    }
+
+    public Ports() {
+    }
 
 
     public UUID getPortsID(){
@@ -55,21 +65,7 @@ public class Ports {
     }
 
 
-    public LocalDate getCreatedDate(){
-        return  CreatedDate;
+
     }
 
 
-    public  void setCreatedDate(LocalDate  CreatedDate) {
-        this.CreatedDate = CreatedDate;
-    }
-    public LocalDate getModifiedDate(){
-        return  ModifiedDate;
-    }
-
-
-    public  void setModifiedDate(LocalDate  ModifiedDate) {
-        this.ModifiedDate = ModifiedDate;
-    }
-
-}
